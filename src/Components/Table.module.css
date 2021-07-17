@@ -1,0 +1,112 @@
+.header {
+    display: flex;
+    background-color: whitesmoke;
+    width: 100vw;
+    min-height: 70px;
+    align-items: center;
+    justify-content: center
+
+}
+
+div p {
+    margin: 0;
+    font-family: Corbel;
+    font-weight: bold;
+    font-size: 3em;
+    color: darkgrey;
+}
+
+.content {
+    display: flex;
+    align-items: stretch;
+    height: 100vh;
+}
+
+.sidebar {
+    display: flex;
+    min-width: 200px;
+    background-color: #282c34;
+    align-items: center;
+    justify-content: center;
+}
+
+.tableContent {
+    margin: 30px;
+}
+
+.table {
+    display: block;
+    border-collapse: collapse;
+    overflow-x: auto;
+    margin-top: 20px;
+    border: 2px solid darkgrey;
+    height: 60vh;
+    width: 700px;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid grey;
+    padding: 2px 3px;
+    text-align: center;
+}
+
+td {
+    width: 100px;
+}
+
+tr:nth-child(1){
+    background-color: turquoise;
+}
+
+td:first-child{
+    width: 200px;
+    text-align: left;
+    padding-left: 10px;
+}
+
+thead{
+    border: 1px solid grey;
+}
+
+thead th {
+    position: sticky;
+    top: 0;
+    background-color: turquoise;
+
+}
+
+.input {
+    min-height: 30px;
+    min-width: 200px;
+    width: 500px;
+    border: 1px solid darkred;
+    background-color: whitesmoke;
+}
+
+.input:focus::placeholder {
+    color: transparent;
+}
+
+.footer {
+    display: flex;
+    background-color: whitesmoke;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+}
+
+.car {
+    margin-top: 10px;
+    border: 1px darkgrey solid;
+    min-height: 40px;
+    min-width: 500px;
+}
+
+.car span {
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 20px;
+}

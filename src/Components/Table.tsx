@@ -1,5 +1,6 @@
 import React, {MouseEvent, useEffect} from 'react';
 import {CarType} from '../App';
+import style from "./Table.module.css";
 
 type PropsType = {
     cars: Array<CarType>
@@ -13,17 +14,13 @@ type PropsType = {
 export function Table(props: PropsType) {
     //debugger;
     let carsForTable = [];
-    for (let carObj of props.cars){
+    for (let carObj of props.cars) {
         carsForTable.push({...carObj, markandmodel: `${carObj.mark} ${carObj.model}`})
     }
-    // debugger;
-    if (!props.findCar) {
-        carsForTable = carsForTable;
-    } else {
 
+    if (props.findCar) {
         carsForTable = carsForTable.filter(car => car.markandmodel.includes(props.findCar));
     }
-
 
     let idKey = 0;
     const rows = carsForTable.map((item, index) => {
@@ -46,14 +43,16 @@ export function Table(props: PropsType) {
     let rowHeader = props.columnName.map(c => <th>{c}</th>)
 
     return <div>
-        <table>
+        <table className={style.table}>
+            <thead>
             <tr>
-                <th onClick={props.sortHandler}>Марка и Модель {props.arrow ? <span>&#129043;</span> :
-                    <span>&#129045;</span>}</th>
-                {rowHeader}</tr>
+                <th onClick={props.sortHandler}>Марка и Модель {props.arrow ? <span>&#8615;</span> :
+                    <span>&#8613;</span>}</th>
+                {rowHeader}
+            </tr>
+            </thead>
             {rows}
         </table>
-
     </div>
 }
 
